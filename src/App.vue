@@ -1,48 +1,49 @@
 <template>
 
-    <div id="app">
+  <div id="app">
 
-        <img alt="Vue logo" src="./assets/logo.png">
-        <LoginForm></LoginForm>
-    </div>
+<!--    <img alt="Vue logo" src="./assets/logo.png">-->
+    <h1>Bank of Excellence Prototype</h1>
+    <router-link to="/login">Login</router-link>
+    <router-view></router-view>
+    <!--        <LoginForm></LoginForm>-->
+  </div>
 </template>
 
 <script>
 
 
-    // import {getBoeApiClient} from './js_code/boe_api_client'
-    import LoginForm from "./containers/LoginForm";
+// import {getBoeApiClient} from './js_code/boe_api_client'
+// import LoginForm from "./views/LoginForm";
 
-    export default {
-        name: 'App',
-        components: {
-          LoginForm
-        }
-    }
-    //
-    // let client = getBoeApiClient()
-    //
-    // client.createNewFamily(
-    //     'baxter_clan',
-    //     'courtney',
-    //     'baxter',
-    //     'cbaxter@gamil.com',
-    //     '1988-09-06T00:00:00'
-    // )
+export default {
+  name: 'App',
+  components: {}
+}
+//
+// let client = getBoeApiClient()
+//
+// client.createNewFamily(
+//     'baxter_clan',
+//     'courtney',
+//     'baxter',
+//     'cbaxter@gamil.com',
+//     '1988-09-06T00:00:00'
+// )
 
 </script>
 
 <style>
 
 
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 
 
 </style>
