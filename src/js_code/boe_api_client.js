@@ -57,3 +57,35 @@ export function getBoeApiClient() {
     )
 
 }
+
+export function authenticateUser(
+    username,
+    password
+) {
+    let axiosClient = require('axios').default;
+    let auth_api_endpoint = 'http://192.168.1.5:9000/api/v1/auth/basic'
+
+    return axiosClient.post(
+        auth_api_endpoint,
+        {
+            "UserAuthRequestEvent": {
+                "username": username,
+                "password": password
+            }
+        }
+    ).then((response) => {
+        console.log(response)
+        return response
+
+
+    }).catch((error) => {
+        if (error.response) {
+            alert(`Unable to Access ${auth_api_endpoint}`)
+
+        } else {
+            console.log(`Unable to Access: ${auth_api_endpoint}`)
+
+        }
+
+    })
+}
