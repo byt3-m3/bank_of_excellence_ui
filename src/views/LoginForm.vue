@@ -15,7 +15,7 @@
         </b-form>
 
         <b-button @click="authenticateUser" variant="primary">Login</b-button>
-        <b-button variant="primary">Sign Up</b-button>
+        <b-button @click="navigateToRegistrationPage" variant="primary">Register</b-button>
 
 
       </b-col>
@@ -42,6 +42,10 @@ export default {
   },
   components: {},
   methods: {
+    navigateToRegistrationPage: function () {
+      this.$router.push("/registration")
+    },
+
     authenticateUser: function () {
 
 
@@ -60,7 +64,6 @@ export default {
       })
 
 
-
     }
   }
 }
@@ -68,4 +71,7 @@ export default {
 
 <style scoped>
 
+button {
+  margin: 5px;
+}
 </style>

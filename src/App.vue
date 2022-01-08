@@ -1,11 +1,26 @@
 <template>
 
   <div id="app">
+    <b-container>
+      <h1>Bank of Excellence Prototype</h1>
+      <b-row >
+        <b-col id="LINKS">
+          <b-link href="#foo">
+            <router-link to="/login">Login</router-link>
+          </b-link>
+          <b-link>
+            <router-link to="/registration">Register</router-link>
+          </b-link>
+        </b-col>
 
-<!--    <img alt="Vue logo" src="./assets/logo.png">-->
-    <h1>Bank of Excellence Prototype</h1>
-    <router-link to="/login">Login</router-link>
-    <router-view></router-view>
+
+
+      </b-row>
+
+      <router-view></router-view>
+    </b-container>
+    <!--    <img alt="Vue logo" src="./assets/logo.png">-->
+
     <!--        <LoginForm></LoginForm>-->
   </div>
 </template>
@@ -43,6 +58,22 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  /*margin: 30px;*/
+  
+
+}
+
+#LINKS {
+  margin: 10px;
+  margin-bottom: 25px;
+}
+
+a {
+  padding-right: 10px;
+}
+
+button {
+  margin: 5px;
 }
 
 
