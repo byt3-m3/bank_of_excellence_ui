@@ -74,13 +74,14 @@ export function authenticateUser(
             }
         }
     ).then((response) => {
-        console.log(response)
+
         return response
 
 
     }).catch((error) => {
         if (error.response) {
-            alert(`Unable to Access ${auth_api_endpoint}`)
+            console.log(`Error Encountered ${error}`)
+            return error
 
         } else {
             console.log(`Unable to Access: ${auth_api_endpoint}`)

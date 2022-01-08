@@ -43,19 +43,23 @@ export default {
   components: {},
   methods: {
     authenticateUser: function () {
-      console.log("Button Clicked")
 
-      console.log(this.$data.username, this.$data.password)
+
       authenticateUser(
           this.$data.username,
           this.$data.password
       ).then((response) => {
         this.$data.access_token = response.data.AccessToken
         this.$data.refresh_token = response.data.RefreshToken
-        console.log()
+
+        alert(`Successfully Logged In`)
+
+      }).catch((error) => {
+        alert("Invalid Login Provided")
+        console.log(error)
       })
 
-      console.log("Test")
+
 
     }
   }
