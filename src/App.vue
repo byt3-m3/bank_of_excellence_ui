@@ -5,12 +5,17 @@
       <h1>Bank of Excellence Prototype</h1>
       <b-row >
         <b-col id="LINKS">
+
+          <b-link>
+            <router-link to="/home">home</router-link>
+          </b-link>
           <b-link href="#foo">
             <router-link to="/login">Login</router-link>
           </b-link>
           <b-link>
             <router-link to="/registration">Register</router-link>
           </b-link>
+
         </b-col>
 
 
