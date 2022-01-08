@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       username: 'cbaxter',
-      password: 'Pimpin@1',
+      // password: 'Pimpin@1',
       access_token: null,
       refresh_token: null,
     }
