@@ -1,14 +1,14 @@
 <template>
   <b-container>
     <b-row>
-      <b-col>
+      <b-col >
         <b-form @submit.stop.prevent>
           <label for="text-username">Username</label>
           <b-form-input v-model="username" type="text" id="text-username"></b-form-input>
 
 
           <label for="text-password">Password</label>
-          <b-form-input v-model="password" type="password" id="text-password"></b-form-input>
+          <b-form-input   v-on:keyup.enter="authenticateUser" v-model="password" type="password" id="text-password"></b-form-input>
           <b-form-group>
 
           </b-form-group>
@@ -55,6 +55,8 @@ export default {
       ).then((response) => {
         this.$data.access_token = response.data.AccessToken
         this.$data.refresh_token = response.data.RefreshToken
+
+        this.$router.push("/home")
 
         alert(`Successfully Logged In`)
 
