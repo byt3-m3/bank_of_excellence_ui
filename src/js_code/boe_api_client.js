@@ -1,3 +1,5 @@
+import {AUTH_API_URL,  CORE_API_URL} from "@/js_code/env";
+
 export async function invokeCreateFamilyLocalUser(
     family_name,
     first_name,
@@ -9,8 +11,9 @@ export async function invokeCreateFamilyLocalUser(
 ) {
 
 
+
     let axiosClient = require('axios').default;
-    let url = 'http://192.168.1.5:5001/api/v1/registration/family/local'
+    let url = `${CORE_API_URL}/api/v1/registration/family/local`
     let event = {
         "FamilyRegistrationLocalRequest": {
             family_name: family_name,
@@ -35,7 +38,7 @@ export async function authenticateUser(
     password
 ) {
     let axiosClient = require('axios').default;
-    let auth_api_endpoint = 'http://192.168.1.5:9000/api/v1/auth/local/basic'
+    let auth_api_endpoint = `${AUTH_API_URL}/api/v1/auth/local/basic`
 
     return axiosClient.post(
         auth_api_endpoint,
@@ -48,4 +51,14 @@ export async function authenticateUser(
     )
 
 
+}
+
+export async function getFamilyDetails(
+    familyID
+) {
+    console.log(CORE_API_URL)
+    let axiosClient = require('axios').default;
+    let auth_api_endpoint = `${CORE_API_URL}/api/v1/family/${familyID}`
+
+    return axiosClient.get(auth_api_endpoint)
 }
