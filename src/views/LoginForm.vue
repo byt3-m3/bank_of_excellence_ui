@@ -29,14 +29,14 @@
 </template>
 
 <script>
-import {authenticateUser} from "../js_code/boe_api_client";
+import {authenticateUser} from "@/js_code/boe_api_client";
 
 export default {
   name: "LoginForm",
   data() {
     return {
-      username: 'cbaxter',
-      password: '',
+      username: null,
+      password: null,
       access_token: null,
       refresh_token: null,
     }
