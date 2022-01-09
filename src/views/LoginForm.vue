@@ -1,20 +1,21 @@
 <template>
   <b-container>
     <b-row>
-      <b-col >
+      <b-col>
         <b-form @submit.stop.prevent>
           <label for="text-username">Username</label>
           <b-form-input v-model="username" type="text" id="text-username"></b-form-input>
 
 
           <label for="text-password">Password</label>
-          <b-form-input   v-on:keyup.enter="authenticateUser" v-model="password" type="password" id="text-password"></b-form-input>
+          <b-form-input v-on:keyup.enter="authenticateUser" v-model="password" type="password"
+                        id="text-password"></b-form-input>
           <b-form-group>
 
           </b-form-group>
         </b-form>
 
-        <b-button @click="authenticateUser" variant="primary">Login</b-button>
+        <b-button @click="loginUser" variant="primary">Login</b-button>
         <b-button @click="navigateToRegistrationPage" variant="primary">Register</b-button>
 
 
@@ -46,24 +47,27 @@ export default {
       this.$router.push("/registration")
     },
 
-    authenticateUser: function () {
+    loginUser: async function () {
 
+      try {
+        let results = await authenticateUser(
+            this.$data.username,
+            this.$data.password
+        )
+        if (results.data.auth_result === true) {
+          alert("Successfully Logged-In, Redirecting..")
+          this.$router.push("/home")
+        }
 
-      authenticateUser(
-          this.$data.username,
-          this.$data.password
-      ).then((response) => {
-        this.$data.access_token = response.data.AccessToken
-        this.$data.refresh_token = response.data.RefreshToken
+        if (results.data.auth_result === false) {
+          alert("Invalid Password Provided")
 
-        this.$router.push("/home")
+        }
 
-        alert(`Successfully Logged In`)
+      } catch (err) {
+        alert("Invalid Username Provided")
 
-      }).catch((error) => {
-        alert("Invalid Login Provided")
-        console.log(error)
-      })
+      }
 
 
     }
