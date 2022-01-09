@@ -7,7 +7,7 @@
         <b-col id="LINKS">
 
           <b-link>
-            <router-link to="/home">home</router-link>
+            <router-link to="/home">Home</router-link>
           </b-link>
           <b-link href="#foo">
             <router-link to="/login">Login</router-link>
@@ -40,16 +40,6 @@ export default {
   name: 'App',
   components: {}
 }
-//
-// let client = getBoeApiClient()
-//
-// client.createNewFamily(
-//     'baxter_clan',
-//     'courtney',
-//     'baxter',
-//     'cbaxter@gamil.com',
-//     '1988-09-06T00:00:00'
-// )
 
 </script>
 
