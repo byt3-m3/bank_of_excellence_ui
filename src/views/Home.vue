@@ -2,7 +2,7 @@
 
   <b-container>
     <b-row>
-      <h3>Family Name: {{ this.$store.state.familyId }}</h3>
+      <h3>Welcome: {{ this.$store.state.userName }}</h3>
     </b-row>
     <b-row>
       <b-col>
@@ -34,10 +34,12 @@ export default {
 
   },
   beforeCreate() {
-    getFamilyDetails("7ad46d57-2373-4e67-9456-bc2f11e928ba").then((response) => {
+    getFamilyDetails("6e84a48c-890a-4dd1-91db-8db17dd0737d").then((response) => {
 
       this.$data.user_details = response.data
       this.$data.family_name = response.data.family_name
+
+
     })
 
   }

@@ -58,7 +58,9 @@ export default {
           alert("Successfully Logged-In, Redirecting..")
           console.log(results)
           this.$store.commit('setUserName', this.$data.username)
-          this.$store.commit('setUserId', results.data.id)
+          this.$store.commit('setUserId', results.data.user_id)
+          this.$store.commit('setUserAccountType', results.data.account_type)
+          this.$store.commit('setFamilyId', results.data.family_id)
           this.$router.push("/home")
         }
 
