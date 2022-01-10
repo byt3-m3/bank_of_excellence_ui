@@ -56,6 +56,9 @@ export default {
         )
         if (results.data.auth_result === true) {
           alert("Successfully Logged-In, Redirecting..")
+          console.log(results)
+          this.$store.commit('setUserName', this.$data.username)
+          this.$store.commit('setUserId', results.data.id)
           this.$router.push("/home")
         }
 
