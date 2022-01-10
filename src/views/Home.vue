@@ -2,7 +2,7 @@
 
   <b-container>
     <b-row>
-      <h3>Family Name: {{ family_name }}</h3>
+      <h3>Family Name: {{ $store.state.family_id }}</h3>
     </b-row>
     <b-row>
       <b-col>
